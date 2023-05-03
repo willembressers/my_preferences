@@ -1,0 +1,35 @@
+// install the following extensions (“Ctrl + p” or “Cmd + p”)
+// - ext install ms-python.python
+// - ext install ms-python.isort
+// - ext install ms-python.flake8
+// - ext install njpwerner.autodocstring
+
+{
+    // ========== linting ========== 
+    "python.linting.pycodestyleEnabled": true,
+    "python.linting.pydocstyleEnabled": true,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Args": [
+        "--max-line-length=120",
+        "--ignore=E402,F841,F401,E302,E305",
+    ],
+    "python.linting.pycodestyleArgs": [
+        "--ignore=E501"
+    ],
+    // ========== formatting ==========
+    "python.formatting.provider": "autopep8",
+    "python.formatting.autopep8Args": [
+        "--max-line-length",
+        "120",
+        "--experimental"
+    ],
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        "editor.formatOnType": true,
+    },
+    // ========== sort imports ==========
+    "isort.args":["--profile", "black"],
+}
